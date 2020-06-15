@@ -1,25 +1,24 @@
 ---
-gateway: 192.168.122.1
+gateway: 10.211.55.1
 netmask: 255.255.255.0
-gateway2: 192.168.132.1
+gateway2: 10.211.55.2
 netmask2: 255.255.255.0
 # VMWare default ens192
 # KVM default ens3
 # Libvirt default enp1s0
-interface: ens192
-interface2: ens224
+interface: eth0
+#interface2: ens224
 dns: 
-  - 192.168.1.20
-  - 192.168.2.20
-webserver_url: 192.168.1.20
-webserver_port: 8080
+  - 8.8.8.8
+webserver_url: 10.211.55.26
+webserver_port: 81
 
 # Drive to install RHCOS
 # Libvirt - can be vda
 install_drive: sda
 
-ocp_version: 4.3
-iso_checksum: 302081da24277ed752fee8d69839227f4f24ec71261f9dfe2752ea8c0f20a0ed
-iso_name: rhcos-{{ ocp_version }}.0-x86_64-installer.iso
-rhcos_bios: rhcos-{{ ocp_version }}.0-x86_64-metal.raw.gz
+ocp_version: 4.4
+iso_checksum: dc1287165ff5b9d10e729c5541b616d466a9f0ed2e3380d59490503758a4cb24
+iso_name: rhcos-{{ ocp_version }}.3-x86_64-installer.x86_64.iso
+rhcos_bios: rhcos-{{ ocp_version }}.3-x86_64-metal.x86_64.raw.gz
 ...
